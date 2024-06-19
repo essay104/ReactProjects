@@ -8,7 +8,7 @@ const TodoList = ({ todo, onUpdate, onDelete }) => {
   const onChangeSearch = (e) => {
     setSearch(e.target.value);
   };
-  const gestSearchResult = () => {
+  const getSearchResult = () => {
     return search === ""
       ? todo
       : todo.filter((it) =>
@@ -26,7 +26,7 @@ const TodoList = ({ todo, onUpdate, onDelete }) => {
         onChange={onChangeSearch}
       />
       <div className="list_wrapper">
-        {gestSearchResult().map((it) => (
+        {getSearchResult().map((it) => (
           <TodoItem
             key={todo.id}
             {...it}

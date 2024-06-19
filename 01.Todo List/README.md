@@ -1,70 +1,23 @@
-# Getting Started with Create React App
+### TodoList 만드는 순서
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# 1. Header 컴포넌트를 만든다. 헤더에는 날짜가 표시되며 newDate객체를 생성후 toDateString함수로 오늘 날짜를 표시한다.
 
-## Available Scripts
+# 2. TodoEditor 컴포넌트를 만든다. TodoEditor는 onCreate함수를 props로 받는다. onCreate함수는 객체(Todo)를 생성하는 함수이다. useRef를 사용해서 id값을 저장한다. setTodo로 상태변화를 관리한다.
 
-In the project directory, you can run:
+# 3. TodoEditor 내부의 input태그에 useRef를 달아 관리한다. conChange로 onChangeContent함수를 넣고 onChangeContent를 만든다.
 
-### `npm start`
+# 4. TodoEditor 내부의 button태그에 onClick에 onSubmit함수를 만든다.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+# 5. TodoList 컴포넌트를 만들고 todo와 onUpdate, onDelete함수를 props로 전달한다.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+# 6. TodoList 컴포넌트는 자식 컴포넌트로 TodoItem을 가진다. 검색을 할수있는 input태그와 전채를 감싸는 div태그를 만든다.
 
-### `npm test`
+# 7. 검색 결과를 반환하는 함수인 getSearchResult 함수를 만들고 todo 목록을 필터링하여 반환한 getSearchResult에 map함수로 필터링된 todo 목록을 화면에 렌더링한다.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## 문제점
 
-### `npm run build`
+# props가 app->TodoList->TodoItem으로 복잡하게 전달되는 문제 TodoList에는 쓰이지 않는 프롭스를 TodoItem에 전달하기 위해 불필요하게 TodoList에도 프롭스를 전달해야한다.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## 해결법
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+# useContext, useReduce, useCallback들의 훅으로 프롭스를 최적화하여 관리한다.
