@@ -1,8 +1,16 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useReducer } from "react";
 import Header from "./components/Header";
 import TodoEditor from "./components/TodoEditor";
 import TodoList from "./components/TodoList";
 import "./App.css";
+
+const reducer = (state, action) => {
+  switch (action.type) {
+    case "CREATE": {
+    
+    }
+  }
+};
 
 const mockTodo = [
   {
