@@ -67,12 +67,12 @@ function App() {
     })
   };
 
-  const onDelete = (targetId) => {
+  const onDelete = useCallback((targetId) => {
     dispatch({
-      type:"DELETE",
+      type: "DELETE",
       targetId,
-    })
-  };
+    });
+  }, []);
 
   return (
     <div className="App">
