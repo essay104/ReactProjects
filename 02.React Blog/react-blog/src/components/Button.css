@@ -1,0 +1,27 @@
+.Button {
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 18px;
+    font-family: 'NEXONFootballGothicBA1';
+    transition: all 0.3s;
+}
+
+.Button:hover {
+    background: #999;
+}
+
+.Button_default {
+    background: #ececec;
+}
+
+.Button_positive {
+    background: #1288f8;
+    color: #fff;
+}
+
+.Button_negative {
+    background: #1f1f1f;
+    color: #fff;
+}

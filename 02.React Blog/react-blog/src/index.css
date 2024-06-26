@@ -1,13 +1,28 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@font-face {
+  font-family: 'NEXONFootballGothicBA1';
+  src: url('https://gcore.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.1/NEXONFootballGothicBA1.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body {
+  width: 100%;
+  height: auto;
+  /* margin-top: 100px; */
+  background: #f6f6f6;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'NEXONFootballGothicBA1';
+}
+
+#root {
+  width: 100%;
+  max-width: 1240px;
+  height: 100%;
+  background: #fff;
+  box-shadow: 0 7px 29px rgba(100, 100, 100, 0.2);
+  padding: 20px;
+  border-radius: 8px;
+  margin-top: 20px;
 }
