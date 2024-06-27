@@ -10,11 +10,18 @@ const sortOptionList = [
     { value: "oldest", name: "오래된순" },
 ]
 
-const DiaryList = ({ mockData, date }) => {
+const DiaryList = ({ data }) => {
+    const [sortedData, setSortedData] = useState([])
     const navigate = useNavigate()
     const onClickNew = () => {
         navigate("/new")
     }
+
+    useEffect(() => {
+        const copyList = JSON.parse(JSON.stringify(data))
+        setSortedData(copyList)
+    }, [])
+
 
     return (
         <div className='DiaryList'>
@@ -31,7 +38,7 @@ const DiaryList = ({ mockData, date }) => {
                 </div>
             </div>
             <div className='list_wrapper'>
-                {mockData.map((it) => <DiaryItem key={it.id} {...it} />)}
+                {sortedData.map((it) => <DiaryItem key={it.id} {...it} />)}
             </div>
         </div>
     )

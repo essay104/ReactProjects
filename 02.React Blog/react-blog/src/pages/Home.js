@@ -1,11 +1,17 @@
-import React from 'react'
+import { useState, useContext, useEffect } from "react";
 import Header from '../components/Header'
 import Button from '../components/Button'
 import DiaryList from '../components/DiaryList'
-import { useState } from 'react'
+import { DiaryStateContext } from '../App'
+import { getMonthRangeByDate, setPageTitle } from "../util";
 
-const Home = ({ onClick, mockData }) => {
+const Home = () => {
+  const data = useContext(DiaryStateContext)
   const [pivotDate, setPivotDate] = useState(new Date());
+
+  useEffect(() => {
+    setPageTitle("감정일기장 메인페이지");
+  }, []);
 
   const onIncreaseMonth = () => {
     setPivotDate(new Date(pivotDate.getFullYear(), pivotDate.getMonth() + 1))
@@ -25,7 +31,7 @@ const Home = ({ onClick, mockData }) => {
         leftChild={<Button text="Prev" onClick={onDecreaseMonth} />}
         rightChild={<Button text="Next" onClick={onIncreaseMonth} />}
       />
-      <DiaryList mockData={mockData} />
+      <DiaryList data={data} />
     </div>
   )
 }

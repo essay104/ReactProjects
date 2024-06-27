@@ -8,6 +8,14 @@
     align-items: center;
 }
 
+.EmotionItem:hover {
+    background-color: #eee;
+}
+
+.EmotionItem:active {
+    background-color: #ddd;
+}
+
 .EmotionItem img {
     width: 50%;
     margin-bottom: 10px;
@@ -17,31 +25,7 @@
     font-size: 18px;
 }
 
-.EmotionItem_off {
-    background: #ececec;
-}
-
-.EmotionItem_on_1 {
-    background: #64c964;
-    color: #fff;
-}
-
-.EmotionItem_on_2 {
-    background: #9dd772;
-    color: #fff;
-}
-
-.EmotionItem_on_3 {
-    background: #fdce17;
-    color: #fff;
-}
-
-.EmotionItem_on_4 {
-    background: #fd8446;
-    color: #fff;
-}
-
-.EmotionItem_on_5 {
-    background: #fd565f;
+.EmotionItem_on {
+    background: #ccc;
     color: #fff;
 }
