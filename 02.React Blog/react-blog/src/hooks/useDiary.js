@@ -1,6 +1,3 @@
-// 커스텀 훅!!!!
-// F/E 개발자가 직접 훅을 만들어서 사용가능
-// JS class 객체의 형태를 커스텀
 import { useContext, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { DiaryStateContext } from "../App";

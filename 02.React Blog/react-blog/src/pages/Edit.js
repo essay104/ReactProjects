@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import Header from '../components/Header'
 import Button from '../components/Button'
 import { DiaryDispatchContext } from '../App'
@@ -14,6 +14,9 @@ const Edit = () => {
   const goBack = () => {
     navigate(-1)
   }
+
+  console.log(data)
+
   const { onUpdate, onDelete } = useContext(DiaryDispatchContext)
 
   const onClickDelete = () => {
@@ -24,10 +27,9 @@ const Edit = () => {
   };
 
   const onSubmit = (data) => {
-    if (window.confirm("정말 수정하시겠습니까?")) {
-      const { date, emotionId, content } = data
-      onUpdate(id, date, emotionId, content)
-      navigate("/", { replace: true })
+    if (id !== undefined) {
+      const { date, emotionId, content } = data;
+      onUpdate(id, date, emotionId, content);
     }
   }
 
@@ -36,7 +38,7 @@ const Edit = () => {
   }, []);
 
   if (!data) {
-    return <div>일기를 불러오고 있습니다...</div>
+    return <div>일기를 불러오고 있습니다...</div>;
   } else {
     return (
       <div>
@@ -49,8 +51,8 @@ const Edit = () => {
         />
         <Editor initData={data} onSubmit={onSubmit} />
       </div>
-    )
+    );
   }
-}
+};
 
 export default Edit

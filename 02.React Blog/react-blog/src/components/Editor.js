@@ -8,6 +8,7 @@ import EmotionItem from './EmotionItem'
 
 
 const Editor = ({ initData, onSubmit }) => {
+    const navigate = useNavigate()
 
     const initDate = (date) => {
         const year = date.getFullYear();
@@ -15,8 +16,6 @@ const Editor = ({ initData, onSubmit }) => {
         const day = String(date.getDate());
         return `${year}-${month}-${day}`;
     }
-
-    const navigate = useNavigate()
 
     const [state, setState] = useState({
         date: initDate(new Date()),
@@ -57,11 +56,6 @@ const Editor = ({ initData, onSubmit }) => {
     }
 
     const handleSubmit = () => {
-        // if (content.trim() === "") {
-        //     alert("내용을 입력해 주세요!!")
-        // } else {
-        //     onSubmit(state)
-        // }
         content.trim() === "" ? alert("내용을 입력해 주세요!!") : onSubmit(state)
     }
 

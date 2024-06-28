@@ -1,4 +1,4 @@
-import React, { useEffect, useId } from 'react'
+import React, { useEffect } from 'react'
 import { useParams, useNavigate } from 'react-router-dom'
 import Header from '../components/Header'
 import Button from '../components/Button'
@@ -21,21 +21,25 @@ const Diary = () => {
 
   useEffect(() => {
     setPageTitle(`${id}번 일기`)
-  })
+  }, [])
 
-  const { date, emotionId, content } = data
+  console.log(data)
 
-  const title = `${getFormattedDate(new Date(Number(date)))}`
-
-  return (
-    <div>
-      <Header
-        leftChild={<Button onClick={goBack} text="< 뒤로가기" />}
-        title={title}
-        rightChild={<Button onClick={goEdit} text="수정하기" />} />
-      <Viewer content={content} emotionId={emotionId} />
-    </div>
-  )
+  if (!data) {
+    return <div>일기를 불러오고 있습니다...</div>
+  } else {
+    const { date, emotionId, content } = data
+    const title = `${getFormattedDate(new Date(Number(date)))} 기록`
+    return (
+      <div >
+        <Header
+          leftChild={<Button onClick={goBack} text="< 뒤로가기" />}
+          title={title}
+          rightChild={<Button onClick={goEdit} text="수정하기" />} />
+        <Viewer content={content} emotionId={emotionId} />
+      </div >
+    )
+  }
 }
 
 export default Diary

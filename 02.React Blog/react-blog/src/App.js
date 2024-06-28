@@ -65,13 +65,12 @@ function App() {
     dispatch({
       type: "CREATE",
       data: {
-        id: idRef.current,
+        id: data.length,
         date: new Date(date).getTime(),
         emotionId,
         content,
       },
     });
-    idRef.current += 1;
   };
 
   const onUpdate = (targetId, date, emotionId, content) => {
