@@ -1,0 +1,53 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+body {
+  background-color: #f0f0f0;
+}
+
+.container {
+  background-color: #fff;
+  color: #0A0A0A;
+  width: 450px;
+  height: 650px;
+  margin: 100px auto;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+/* header */
+
+.header {
+  padding: 25px;
+  border: 1px solid #000;
+}
+
+.header img {
+  cursor: pointer;
+}
+
+/* input */
+
+input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #eee;
+  margin: 10px;
+  outline: none;
+}
+
+input:hover::placeholder {
+  content: "";
+}

@@ -1,0 +1,15 @@
+import React from 'react'
+
+const Header = () => {
+    return (
+        <div className='header'>
+            <div className='logo'>
+                <img src='https://i.namu.wiki/i/K08keDh3ZptP4PtYkFP3wiCYgAfgjL_NGCM3gbSphZhv4doTNo4JR8bUsnR6foJorXj9bFkzriOK-lyYmSNr1KCeZt_MNKZVOyYD6jTWi3hGEvqZ1PZlJ3rhOgD-Zx7iVUNfFTcZAvlET-VnxF0nfA.svg'
+                    width={120}
+                />
+            </div>
+        </div>
+    )
+}
+
+export default Header
