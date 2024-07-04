@@ -13,7 +13,6 @@ const ProductDetail = () => {
         const response = await fetch(jsonData)
         const data = await response.json()
         setLoading(false)
-        const productDetail = data.products.find(item => item.id.toString() === id);
         setProduct(productDetail)
         console.log(productDetail)
     }
@@ -28,9 +27,9 @@ const ProductDetail = () => {
     else {
         return (
             <Container>
-                    <Col className="product-detail-img">
-                        <img src={product?.img} alt="imgInfo" />
-                    </Col>
+                <Col className="product-detail-img">
+                    <img src={product?.img} alt="imgInfo" />
+                </Col>
                 <Row>
                     <Col>
                         <div className="product-info">{product?.title}</div>

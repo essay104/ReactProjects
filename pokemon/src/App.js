@@ -3,33 +3,11 @@ import Header from './components/Header';
 import Home from './pages/Home';
 import PokemonAll from './pages/PokemonAll';
 import Maps from './pages/Maps';
+import BottomNav from './components/BottomNav';
 import { useState, useEffect } from 'react';
-import { Route, Routes } from 'react-router-dom';
+import { Route, Routes, Link } from 'react-router-dom';
 
 function App() {
-  const [pokemonName, setPokemonName] = useState('');
-  const [pokemonData, setPokemonData] = useState(null);
-  const [error, setError] = useState('');
-
-  const fetchPokemon = async () => {
-    setError('');
-    setPokemonData(null);
-
-    try {
-      const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${pokemonName.toLowerCase()}`);
-      if (!response.ok) {
-        throw new Error('Pokémon not found');
-      }
-      const data = await response.json();
-      setPokemonData(data);
-    } catch (error) {
-      setError(error.message);
-    }
-  };
-
-  useEffect(() => {
-    fetchPokemon()
-  }, [])
 
   return (
     <body>
@@ -38,7 +16,7 @@ function App() {
         <section>
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/pokemon" element={<PokemonAll />} />
+            <Route path="/pokemonAll" element={<PokemonAll />} />
             <Route path='/maps' element={<Maps />} />
           </Routes>
         </section>

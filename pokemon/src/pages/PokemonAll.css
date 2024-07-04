@@ -1,0 +1,103 @@
+.pokemonAll {
+    width: 100%;
+    display: flex;
+    justify-content: start;
+}
+
+.type-nav {
+    width: 100%;
+    border-bottom: 1px solid #eee;
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    gap: 10px;
+    padding: 10px 50px;
+}
+
+.type {
+    width: 150px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    color: #fff;
+    transition: all 0.3s;
+}
+
+.type:hover {
+    box-shadow: inset 1px 1px 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+.type:first-child {
+    background-color: #949495;
+}
+
+.type:nth-child(2) {
+    background-color: #E09C40;
+}
+
+.type:nth-child(3) {
+    background-color: #A2C3E7;
+}
+
+.type:nth-child(4) {
+    background-color: #735198;
+}
+
+.type:nth-child(5) {
+    background-color: #9C7743;
+}
+
+.type:nth-child(6) {
+    background-color: #BFB889;
+}
+
+.type:nth-child(7) {
+    background-color: #9FA244;
+}
+
+.type:nth-child(8) {
+    background-color: #684870;
+}
+
+.type:nth-child(9) {
+    background-color: #69A9C7;
+}
+
+.type:nth-child(10) {
+    background-color: #E56C3E;
+}
+
+.type:nth-child(11) {
+    background-color: #5185C5;
+}
+
+.type:nth-child(12) {
+    background-color: #66A945;
+}
+
+.type:nth-child(13) {
+    background-color: #FBB917;
+}
+
+.type:nth-child(14) {
+    background-color: #DD6B7B;
+}
+
+.type:nth-child(15) {
+    background-color: #6DC8EB;
+}
+
+.type:nth-child(16) {
+    background-color: #535CA8;
+}
+
+.type:nth-child(17) {
+    background-color: #4C4948;
+}
+
+.type:nth-child(18) {
+    background-color: #DAB4D4;
+}

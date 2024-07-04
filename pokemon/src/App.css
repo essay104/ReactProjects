@@ -17,68 +17,22 @@ a {
 }
 
 body {
-  background-color: #eee;
+  background-color: #fff;
   width: 100%;
-  background-position: center;
+  /* background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  background-image: url("https://i.namu.wiki/i/VvIcLut8vyoijWaIQZgpY-eb3IcC_x6xlcka8QJ1ELkK1LhWJPH261IjB4lptev3gAn2wQbH-MLo77c3h9IZpZ4OhSc6F8yuMXSfmPME6SCE9U6ZrovDz6yIMoaj9iEERgWzqnu4WJteCEew9s5D6A.webp");
+  background-image: url("https://i.namu.wiki/i/VvIcLut8vyoijWaIQZgpY-eb3IcC_x6xlcka8QJ1ELkK1LhWJPH261IjB4lptev3gAn2wQbH-MLo77c3h9IZpZ4OhSc6F8yuMXSfmPME6SCE9U6ZrovDz6yIMoaj9iEERgWzqnu4WJteCEew9s5D6A.webp"); */
 }
 
 .container {
   background-color: #fff;
   color: #0A0A0A;
-  max-width: 1380px;
+  /* max-width: 1380px; */
   width: 100%;
-  height: 100vh;
   margin: 0 auto;
-  z-index: 1;
-}
-
-/* header */
-
-.header {
-  padding: 25px 50px;
-  position: relative;
-  z-index: 2;
-  background-color: #3f3f3f;
-  border-bottom: 1px solid #999;
-}
-
-.header img {
-  cursor: pointer;
-}
-
-/* input */
-
-.nav-menu {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background-color: #1f1f1f;
-  color: #f0f0f0;
-  padding: 0 50px;
-}
-
-input {
-  width: 450px;
-  padding: 10px;
-  border: 1px solid #eee;
-  margin: 10px;
-  outline: none;
-  box-shadow: 3px 3px 2px rgba(0, 0, 0, 0.2);
-}
-
-input:hover::placeholder {
-  content: "";
-}
-
-.log-in {
-  display: flex;
-  gap: 10px;
-  align-items: center;
-  font-size: 1.2rem;
-  cursor: pointer;
+  padding-bottom: 50px;
+  border-top: none;
 }
 
 section {
@@ -87,24 +41,19 @@ section {
   justify-content: center;
   align-items: center;
   width: 100%;
-  height: 650px;
-  border: 1px solid #000;
 }
 
 /* Home */
 
 .home {
-  border: 1px solid #f00;
   width: 100%;
-  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  gap: 20px;
 }
 
-.Home-gnb {
+/* .Home-gnb {
   display: flex;
   justify-content: center;
   gap: 50px;
@@ -137,4 +86,4 @@ section {
 
 .Home-gnb-menu:nth-child(4) {
   background-color: #FFCB05;
-}
+} */
