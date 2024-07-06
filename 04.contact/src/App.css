@@ -1,0 +1,17 @@
+.title {
+  text-align: center;
+}
+
+.App {
+  display: flex;
+  margin: 50px 0;
+  flex-direction: column;
+  gap: 50px;
+}
+
+.gap {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  justify-content: center;
+}
