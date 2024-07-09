@@ -1,70 +1,45 @@
-# Getting Started with Create React App
+240423 참고
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+api 패치하기
 
-## Available Scripts
+1. redux, axios, redux-thunk 등 각종 패키지 설치
+2. .env파일 만들어서 key 가져오기
+3. reducer. action 작성하기
+4. redux store 설정
+5. redux provider 설정
+6. components에서 redux 사용
 
-In the project directory, you can run:
+chatGPT
 
-### `npm start`
+설치: Redux, React-Redux, Redux-Thunk 패키지를 설치합니다.
+액션 작성: 비동기 API 호출을 처리하는 액션 생성자를 작성합니다.
+리듀서 작성: 액션에 따라 상태를 업데이트하는 리듀서를 작성합니다.
+스토어 설정: Redux 스토어를 설정하고, Redux-Thunk 미들웨어를 적용합니다.
+프로바이더 설정: 최상위 컴포넌트에서 Redux 스토어를 제공하도록 설정합니다.
+컴포넌트에서 사용: Redux 상태와 액션을 컴포넌트에서 사용하여 데이터를 표시합니다.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+작성 순서
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+API 설정 (api.js)
+-axios 인스턴스 생성
+axios 인스턴스란? 
+동일한 설정을 여러 요청에 재사용 할 수 있는 기능
+axios.craete로 생성 (객체에는 baseURL과 header 등)
 
-### `npm test`
+왜 axios.create()를 사용하는가?
+재사용 가능성: 동일한 설정을 여러 요청에 반복적으로 사용할 수 있습니다.
+유지 보수성: 기본 설정을 한 곳에서 관리할 수 있어, 설정을 변경해야 할 때 모든 요청 코드를 수정할 필요가 없습니다.
+코드의 일관성: 모든 요청에 일관된 설정이 적용되므로 코드의 일관성을 유지할 수 있습니다.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+인터셉터를 사용하는 주된 이유는 다음과 같습니다:
+로깅: 요청과 응답을 로그에 기록하여 디버깅과 모니터링을 용이하게 합니다.
+공통 작업 수행: 모든 요청에 공통적으로 필요한 작업(예: 인증 토큰 추가, 오류 처리 등)을 중앙에서 수행할 수 있습니다.
+응답 데이터 처리: 응답 데이터를 가로채어 필요한 변환이나 전처리를 수행할 수 있습니다.
+그러나 단순히 API 요청을 수행하고 응답을 받는 경우에는 인터셉터를 반드시 설정할 필요는 없습니다. 인터셉터 없이도 Axios는 정상적으로 동작하며, API 요청을 수행하고 응답을 받을 수 있습니다.
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Actions 작성 (actions/movieAction.js)
+Reducer 작성 (reducers/movieReducer.js 및 reducers/index.js)
+Store 설정 (store.js)
+Redux Provider 설정 (src/index.js)
+컴포넌트에서 Redux 사용 (src/SomeComponent.js)
