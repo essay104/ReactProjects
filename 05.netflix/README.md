@@ -40,6 +40,11 @@ axios.craete로 생성 (객체에는 baseURL과 header 등)
 
 Actions 작성 (actions/movieAction.js)
 Reducer 작성 (reducers/movieReducer.js 및 reducers/index.js)
+
 Store 설정 (store.js)
+Promise.all(여러개의 promise들을 병렬로 실행시켜줌)
+
+combineReducer : Redux에서 제공하는 함수로, 여러 개의 리듀서를 하나의 루트 리듀서로 결합합니다.
+
 Redux Provider 설정 (src/index.js)
 컴포넌트에서 Redux 사용 (src/SomeComponent.js)

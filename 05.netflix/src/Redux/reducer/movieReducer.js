@@ -1,3 +1,5 @@
+// state 초기값 설정
+
 const initialState = {
     popularMovies: {},
     topRatedMovies: {},
