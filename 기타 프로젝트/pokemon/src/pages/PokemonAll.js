@@ -1,8 +1,17 @@
-import React from 'react'
+import React, { useEffect } from 'react';
 import "./PokemonAll.css"
 import PokemonCard from '../components/PokemonCard'
+import { useDispatch, useSelector } from 'react-redux'
+import { pokemonAction } from '../redux/actions/pokemonAction'
 
 const PokemonAll = () => {
+  const dispatch = useDispatch();
+  const { data: pokemonList, loading} = useSelector((state) => state.pokemon);
+
+  useEffect(() => {
+    dispatch(pokemonAction.getPokemon());
+  }, [dispatch]);
+
   return (
     <section className='pokemonAll'>
       <div className='type-nav'>
@@ -25,7 +34,7 @@ const PokemonAll = () => {
         <div className='type'>악</div>
         <div className='type'>페어리</div>
       </div>
-      <PokemonCard />
+      <PokemonCard pokemonList={pokemonList} loading={loading} />
     </section>
   )
 }
