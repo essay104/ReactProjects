@@ -101,3 +101,7 @@
 .type:nth-child(18) {
     background-color: #DAB4D4;
 }
+
+.result-container {
+    padding: 50px;
+}

@@ -11,15 +11,10 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    border-radius: 5px;
     padding: 20px;
-    box-shadow: 1px 1px 1px 3px rgba(0, 0, 0, 0.8);
     cursor: pointer;
     transition: all 0.3s;
-}
-
-.pokemonCard:hover {
-    background-color: rgba(0, 0, 0, 0.8);
-    color: #fff;
 }
 
 .pokemonCards {
@@ -27,3 +22,239 @@
     grid-template-columns: repeat(9, 1fr);
     gap: 10px;
 }
+
+.pokemonCard:hover {
+    background-color: #6890F0;
+}
+
+.pokemonType {
+    display: flex;
+    gap: 5px;
+}
+
+/* typeColor */
+
+.type-normal {
+  border: 3px solid #A8A878;
+}
+
+.type-fighting {
+  border: 3px solid #C03028;
+}
+
+.type-flying {
+  border: 3px solid #A890F0;
+}
+
+.type-poison {
+  border: 3px solid #A040A0;
+}
+
+.type-ground {
+  border: 3px solid #E0C068;
+}
+
+.type-rock {
+  border: 3px solid #B8A038;
+}
+
+.type-bug {
+  border: 3px solid #A8B820;
+}
+
+.type-ghost {
+  border: 3px solid #705898;
+}
+
+.type-steel {
+  border: 3px solid #B8B8D0;
+}
+
+.type-fire {
+  border: 3px solid #F08030;
+}
+
+.type-water {
+  border: 3px solid #6890F0;
+}
+
+.type-grass {
+  border: 3px solid #78C850;
+}
+
+.type-electric {
+  border: 3px solid #F8D030;
+}
+
+.type-psychic {
+  border: 3px solid #F85888;
+}
+
+.type-ice {
+  border: 3px solid #98D8D8;
+}
+
+.type-dragon {
+  border: 3px solid #7038F8;
+}
+
+.type-dark {
+  border: 3px solid #705848;
+}
+
+.type-fairy {
+  border: 3px solid #EE99AC;
+}
+
+/* type-img */
+
+.typeImg {
+  width: 30px;
+  height: 30px;
+}
+
+.type-normal-img {
+  background: url("../imgs/typeImg/normal.svg");
+}
+
+.type-fighting-img {
+  background: url("../imgs/typeImg/fighting.svg");
+}
+
+.type-flying-img {
+  background: url("../imgs/typeImg/flying.svg");
+}
+
+.type-poison-img {
+  background: url("../imgs/typeImg/poison.svg");
+}
+
+.type-ground-img {
+  background: url("../imgs/typeImg/ground.svg");
+}
+
+.type-rock-img {
+  background: url("../imgs/typeImg/rock.svg");
+}
+
+.type-bug-img {
+  background: url("../imgs/typeImg/bug.svg");
+}
+
+.type-ghost-img {
+  background: url("../imgs/typeImg/ghost.svg");
+}
+
+.type-steel-img {
+  background: url("../imgs/typeImg/steel.svg");
+}
+
+.type-fire-img {
+  background: url("../imgs/typeImg/fire.svg");
+}
+
+.type-water-img {
+  background: url("../imgs/typeImg/water.svg");
+}
+
+.type-grass-img {
+  background: url("../imgs/typeImg/grass.svg");
+}
+
+.type-electric-img {
+  background: url("../imgs/typeImg/electric.svg") center/cover no-repeat;
+}
+
+.type-psychic-img {
+  background: url("../imgs/typeImg/psychic.svg");
+}
+
+.type-ice-img {
+  background: url("../imgs/typeImg/ice.svg");
+}
+
+.type-dragon-img {
+  background: url("../imgs/typeImg/dragon.svg");
+}
+
+.type-dark-img {
+  background: url("../imgs/typeImg/dark.svg");
+}
+
+.type-fairy-img {
+  background: url("../imgs/typeImg/fairy.svg");
+}
+
+/* type color hover */
+
+.pokemonCard.type-normal:hover {
+    background-color: #A8A878;
+  }
+  
+  .pokemonCard.type-fighting:hover {
+    background-color: #C03028;
+  }
+  
+  .pokemonCard.type-flying:hover {
+    background-color: #A890F0;
+  }
+  
+  .pokemonCard.type-poison:hover {
+    background-color: #A040A0;
+  }
+  
+  .pokemonCard.type-ground:hover {
+    background-color: #E0C068;
+  }
+  
+  .pokemonCard.type-rock:hover {
+    background-color: #B8A038;
+  }
+  
+  .pokemonCard.type-bug:hover {
+    background-color: #A8B820;
+  }
+  
+  .pokemonCard.type-ghost:hover {
+    background-color: #705898;
+  }
+  
+  .pokemonCard.type-steel:hover {
+    background-color: #B8B8D0;
+  }
+  
+  .pokemonCard.type-fire:hover {
+    background-color: #F08030;
+  }
+  
+  .pokemonCard.type-water:hover {
+    background-color: #6890F0;
+  }
+  
+  .pokemonCard.type-grass:hover {
+    background-color: #78C850;
+  }
+  
+  .pokemonCard.type-electric:hover {
+    background-color: #F8D030;
+  }
+  
+  .pokemonCard.type-psychic:hover {
+    background-color: #F85888;
+  }
+  
+  .pokemonCard.type-ice:hover {
+    background-color: #98D8D8;
+  }
+  
+  .pokemonCard.type-dragon:hover {
+    background-color: #7038F8;
+  }
+  
+  .pokemonCard.type-dark:hover {
+    background-color: #705848;
+  }
+  
+  .pokemonCard.type-fairy:hover {
+    background-color: #EE99AC;
+  }

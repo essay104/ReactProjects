@@ -3,6 +3,7 @@ import Header from './components/Header';
 import Home from './pages/Home';
 import PokemonAll from './pages/PokemonAll';
 import Maps from './pages/Maps';
+import PokemonDetail from './pages/PokemonDetail';
 import BottomNav from './components/BottomNav';
 import { useState, useEffect } from 'react';
 import { Route, Routes, Link } from 'react-router-dom';
@@ -17,6 +18,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/pokemonAll" element={<PokemonAll />} />
+            <Route path='/pokemon/:id' element={<PokemonDetail/>}/>
             <Route path='/maps' element={<Maps />} />
           </Routes>
         </section>

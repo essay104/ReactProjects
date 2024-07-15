@@ -34,7 +34,9 @@ const PokemonAll = () => {
         <div className='type'>악</div>
         <div className='type'>페어리</div>
       </div>
-      <PokemonCard pokemonList={pokemonList} loading={loading} />
+      <div className='result-container'>
+        <PokemonCard pokemonList={pokemonList} loading={loading} />
+      </div>
     </section>
   )
 }

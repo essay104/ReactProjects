@@ -7,7 +7,7 @@ const getPokemon = () => {
       dispatch({
         type: "GET_POKEMON_REQUEST",
       })
-      const pokemon = await api.get(`/pokemon?limit=151`)
+      const pokemon = await api.get(`/pokemon?limit=386`)
       const pokemonData = pokemon.data.results
 
       const pokemonDetails = await Promise.all(
@@ -25,8 +25,11 @@ const getPokemon = () => {
 
           const types = pokemonData.types.map(typeInfo => typeTranslations[typeInfo.type.name])
 
+          const pokemonId = pokemonData.id
+
           return {
             name: koreanName,
+            id : pokemonId,
             imageUrl: imageUrl,
             species: species,
             type: types,

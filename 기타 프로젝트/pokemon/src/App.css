@@ -53,37 +53,3 @@ section {
   flex-direction: column;
 }
 
-/* .Home-gnb {
-  display: flex;
-  justify-content: center;
-  gap: 50px;
-}
-
-.Home-gnb-menu {
-  width: 150px;
-  border-radius: 5px;
-  text-align: center;
-  cursor: pointer;
-  padding: 10px 0;
-  color: #eee;
-}
-
-.Home-gnb-menu:hover {
-  box-shadow: inset 0 0 0 200px rgba(255, 255, 255, 0.2);
-}
-
-.Home-gnb-menu:first-child {
-  background-color: #D63836;
-}
-
-.Home-gnb-menu:nth-child(2) {
-  background-color: #1F4677;
-}
-
-.Home-gnb-menu:nth-child(3) {
-  background-color: #75BC2A;
-}
-
-.Home-gnb-menu:nth-child(4) {
-  background-color: #FFCB05;
-} */
