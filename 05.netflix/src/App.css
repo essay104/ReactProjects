@@ -30,7 +30,7 @@ body {
     height: 800px;
     background-repeat: no-repeat;
     background-size: cover;
-    background-position: left top;
+    background-position: left bottom;
     display: flex;
     align-items: center;
 }

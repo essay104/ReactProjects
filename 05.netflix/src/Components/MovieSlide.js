@@ -1,6 +1,7 @@
 import React from 'react'
 
-const MovieSlide = () => {
+
+const MovieSlide = ({movie}) => {
   return (
     <div>MovieSlide</div>
   )
