@@ -13,6 +13,8 @@ const Home = () => {
     dispatch(movieAction.getMovies())
   },[])
 
+  console.log(popularMovies)
+
   
   if (loading) {
     return (

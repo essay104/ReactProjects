@@ -1,98 +1,86 @@
 body {
     /*코드 업데이트*/
     overflow-x: hidden;
-}
-
-.wrapper {
+    background-color: #000;
+    color: #fff;
+  }
+  .App {
     background: #000;
     width: 100vw;
-    /*코드 업데이트*/
+    color: #fff;
     height: 100%;
-}
-
-.navBar {
+  }
+  .navBar {
     z-index: 1;
     position: relative;
-}
-
-.nav-item {
+  }
+  .nav-item {
     text-decoration: none;
     color: #fff;
     margin: 2px 20px 0;
     transition: all 0.3s;
-}
-
-.nav-item:hover {
+  }
+  .nav-item:hover {
     color: #f00;
-}
-
-.banner {
+  }
+  .banner {
     height: 800px;
     background-repeat: no-repeat;
     background-size: cover;
-    background-position: left bottom;
+    background-position: left top;
     display: flex;
     align-items: center;
-}
-
-.banner::before {
+  }
+  .banner::before {
     content: "";
     position: absolute;
     left: 0;
-    top: 0;
+    top: 6%;
     width: 100%;
     height: 100%;
     background: linear-gradient(to right, black, transparent);
-}
-
-.banner-info {
+  }
+  .banner-info {
     width: 40%;
     margin-left: 30px;
     z-index: 1;
     color: #fff;
-}
-
-.movieContents {
+  }
+  .movieContents {
     z-index: 1;
     position: relative;
     color: #fff;
-}
-
-.loader {
+  }
+  .loader {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 50vh;
-}
-
-.card {
+  }
+  .card {
     width: 300px;
     height: 200px;
-}
-
-.card h1 {
+  }
+  .card h1 {
     color: #fff;
     font-size: 18px;
-}
-
-.card span {
+  }
+  .card span {
     color: #fff;
-}
-
-.overlay {
+  }
+  .overlay {
     opacity: 0;
     transition: all 0.3s;
     width: 110%;
     height: 110%;
     padding: 10px;
-}
-
-.card:hover .overlay {
+  }
+  .card:hover .overlay {
     opacity: 1;
     background: rgba(0, 0, 0, 0.5);
-}
-
-.badge {
+  }
+  .badge {
     font-size: 10px;
     margin-right: 5px;
-}
+  }
+  
