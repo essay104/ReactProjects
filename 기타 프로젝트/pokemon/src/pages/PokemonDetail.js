@@ -1,11 +1,11 @@
 import React, {useEffect} from 'react'
 import { useParams } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux';
-import { pokemonAction } from '../redux/actions/pokemonAction';
 import "./PokemonDetail.css"
+import { pokemonAction } from '../redux/actions/pokemonAction';
 
 const PokemonDetail = () => {
-  const {id} = useParams()
+  const { id } = useParams()
   const dispatch = useDispatch();
   const { data: pokemonList, loading} = useSelector((state) => state.pokemon);
 
@@ -18,10 +18,15 @@ const PokemonDetail = () => {
   }
   else {
 
+    const pokemon = pokemonList.find(pokemon => pokemon.id === parseInt(id));
+
     return (
       <div className='detail-container'>
           <div >
-            <h1>포켓몬 이름</h1>
+            <img src={pokemon.imageUrl} alt={pokemon.name} />
+            <h2>{pokemon.name}</h2>
+            <h3>{pokemon.species}</h3>
+            <p>타입: {pokemon.type.join(', ')}</p>
           </div>
       </div>
     )
