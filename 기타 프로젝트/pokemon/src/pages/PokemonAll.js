@@ -12,6 +12,8 @@ const PokemonAll = () => {
     dispatch(pokemonAction.getPokemon());
   }, [dispatch]);
 
+  console.log(pokemonList)
+
   return (
     <section className='pokemonAll'>
       <div className='type-nav'>

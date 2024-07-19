@@ -25,6 +25,11 @@ const getPokemon = () => {
 
           const types = pokemonData.types.map(typeInfo => typeTranslations[typeInfo.type.name])
 
+          const ability = pokemonData.abilities.map(abilityInfo => ({
+            name: abilityInfo.ability.name,
+            isHidden: abilityInfo.is_hidden,
+          }))
+
           const pokemonId = pokemonData.id
 
           return {
@@ -33,6 +38,7 @@ const getPokemon = () => {
             imageUrl: imageUrl,
             species: species,
             type: types,
+            ability: ability,
           }
         })
       )
@@ -73,6 +79,9 @@ const getPokemonByID = (id) => {
 
           const types = pokemonData.types.map(typeInfo => typeTranslations[typeInfo.type.name])
 
+          const response = await api.get(`/ability/${id}`);
+          const abilityData = response.data;
+
           const pokemonId = pokemonData.id
 
           return {
@@ -81,6 +90,7 @@ const getPokemonByID = (id) => {
             imageUrl: imageUrl,
             species: species,
             type: types,
+            ability: abilityData,
           }
         })
       )
