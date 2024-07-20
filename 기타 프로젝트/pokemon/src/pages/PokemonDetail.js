@@ -25,9 +25,6 @@ const PokemonDetail = () => {
 
     return (
       <div className='detail-container'>
-        <div className='back-nav' onClick={() => navigate(-1)}>
-          <span>돌아가기</span>
-        </div>
           <div className={`pokemon-card-detail ${typeName(pokemon.type[0])}`}>
           <div className='pokemonType'>
               <span className={`typeImg ${typeName(pokemon.type[0])}-img pokemonTypeDetail`}>
@@ -36,7 +33,7 @@ const PokemonDetail = () => {
               </span> }
             <div className={`${pokemon.type[1]}-img`}></div>
           </div>
-            <img className='pokemon-img' src={pokemon.imageUrl} alt={pokemon.name} />
+            <img className='pokemon-img' src={pokemon.imageArtworkUrl} alt={pokemon.name} />
             <h2>{pokemon.name}</h2>
             <h3>{pokemon.species}</h3>
             <div className='ability'>  

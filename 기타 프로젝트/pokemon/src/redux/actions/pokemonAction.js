@@ -21,6 +21,7 @@ const getPokemon = () => {
           const koreanName = speciesData.names.find(name => name.language.name === 'ko').name
           
           const imageUrl = pokemonData.sprites.front_default
+          const imageArtworkUrl = pokemonData.sprites.other['official-artwork'].front_default
           const species = speciesData.genera.find(genus => genus.language.name === 'ko').genus
 
           const types = pokemonData.types.map(typeInfo => typeTranslations[typeInfo.type.name])
@@ -36,6 +37,7 @@ const getPokemon = () => {
             name: koreanName,
             id : pokemonId,
             imageUrl: imageUrl,
+            imageArtworkUrl: imageArtworkUrl,
             species: species,
             type: types,
             ability: ability,
@@ -74,7 +76,8 @@ const getPokemonByID = (id) => {
 
           const koreanName = speciesData.names.find(name => name.language.name === 'ko').name
           
-          const imageUrl = pokemonData.sprites.front_default
+          const imageUrl = pokemonData.sprites.other['official-artwork'].front_default
+          
           const species = speciesData.genera.find(genus => genus.language.name === 'ko').genus
 
           const types = pokemonData.types.map(typeInfo => typeTranslations[typeInfo.type.name])
