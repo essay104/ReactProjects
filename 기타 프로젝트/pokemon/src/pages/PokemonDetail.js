@@ -5,12 +5,12 @@ import "./PokemonDetail.css"
 import { pokemonAction } from '../redux/actions/pokemonAction';
 import { useNavigate } from 'react-router-dom';
 import typeName from '../components/pokemonType';
+import PokemonDetailTop from '../components/PokemonDetailTop';
 
 const PokemonDetail = () => {
   const { id } = useParams()
   const dispatch = useDispatch();
   const { data: pokemonList, loading} = useSelector((state) => state.pokemon);
-  const navigate = useNavigate()
 
   useEffect(() => {
     dispatch(pokemonAction.getPokemon());
@@ -20,12 +20,15 @@ const PokemonDetail = () => {
     return <h1>포켓몬 데이터를 불러오고 있습니다</h1>
   }
   else {
-
+    
+    const prevPokemon = pokemonList.find(pokemon => pokemon.id === parseInt(id) - 1);
     const pokemon = pokemonList.find(pokemon => pokemon.id === parseInt(id));
+    const nextPokemon = pokemonList.find(pokemon => pokemon.id === parseInt(id) + 1);
 
     return (
       <div className='detail-container'>
-          <div className={`pokemon-card-detail ${typeName(pokemon.type[0])}`}>
+        <PokemonDetailTop pokemon={pokemon} nextPokemon={nextPokemon} prevPokemon={prevPokemon}/>
+          <div className={`pokemon-card-detail ${typeName(pokemon.type[0])}-detail`}>
           <div className='pokemonType'>
               <span className={`typeImg ${typeName(pokemon.type[0])}-img pokemonTypeDetail`}>
               </span>

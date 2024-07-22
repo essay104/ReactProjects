@@ -3,14 +3,15 @@ import "./Header.css"
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUser, faMagnifyingGlass, faHouse } from '@fortawesome/free-solid-svg-icons';
+import logo from "../imgs/logo.svg"
 
 const Header = () => {
     return (
         <>
             <div className='header'>
                 <div className='logo'>
-                    <img src='https://i.namu.wiki/i/K08keDh3ZptP4PtYkFP3wiCYgAfgjL_NGCM3gbSphZhv4doTNo4JR8bUsnR6foJorXj9bFkzriOK-lyYmSNr1KCeZt_MNKZVOyYD6jTWi3hGEvqZ1PZlJ3rhOgD-Zx7iVUNfFTcZAvlET-VnxF0nfA.svg'
-                        width={120}
+                    <img src={logo}
+                        width={180}
                     />
                 </div>
             </div>
@@ -31,7 +32,7 @@ const Header = () => {
                 </div>
             </div>
             <div className='Home-gnb'>
-                <Link className='Home-gnb-menu' to="/pokemonAll" >포켓몬 정보</Link>
+                <Link className='Home-gnb-menu' to="/" >포켓몬 정보</Link>
                 <div className='Home-gnb-menu'>지역 정보</div>
                 <div className='Home-gnb-menu'>트레이너 정보</div>
                 <div className='Home-gnb-menu'>열매 정보</div>
