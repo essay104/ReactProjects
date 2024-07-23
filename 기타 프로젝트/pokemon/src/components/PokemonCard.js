@@ -27,7 +27,7 @@ const PokemonCard = ({pokemonList, loading}) => {
               </span> }
             <div className={`${pokemon.type[1]}-img`}></div>
           </div>
-          <img src={pokemon.imageUrl} alt={pokemon.name} />
+          <img src={pokemon.sprites.imageUrl} alt={pokemon.name} />
           <h2>{pokemon.name}</h2>
           <h5>{pokemon.species}</h5>
         </div>

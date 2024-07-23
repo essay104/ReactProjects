@@ -21,7 +21,7 @@ const PokemonDetailTop = ({pokemon, prevPokemon, nextPokemon}) => {
               <p>No.{prevPokemon.id}</p>
               <p>{prevPokemon.name}</p>
             </div>
-              <img src={prevPokemon.imageUrl}/>
+              <img src={prevPokemon.sprites.imageUrl}/>
           </li>
         ) : (<li className='noneImg'>
               <img src={logo} alt='noneImg' width={120}/>
@@ -31,7 +31,7 @@ const PokemonDetailTop = ({pokemon, prevPokemon, nextPokemon}) => {
             <p>No.{pokemon.id}</p>
             <p>{pokemon.name}</p>
           </div>
-          <img src={pokemon.imageUrl}/>
+          <img src={pokemon.sprites.imageUrl}/>
         </li>
         {nextPokemon ? (
           <li className={`${typeName(nextPokemon.type[0])}-detail`} key={nextPokemon.id} onClick={()=> goToPage(nextPokemon.id)}>
@@ -39,7 +39,7 @@ const PokemonDetailTop = ({pokemon, prevPokemon, nextPokemon}) => {
               <p>No.{nextPokemon.id}</p>
               <p>{nextPokemon.name}</p>
             </div>
-            <img src={nextPokemon.imageUrl}/>
+            <img src={nextPokemon.sprites.imageUrl}/>
           </li>
         ) :
         (<li className='noneImg'>

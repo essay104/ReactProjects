@@ -10,7 +10,7 @@ const PokemonAll = () => {
 
   useEffect(() => {
     dispatch(pokemonAction.getPokemon());
-  }, [dispatch]);
+  }, [dispatch],);
 
   console.log(pokemonList)
 

@@ -14,6 +14,7 @@ const PokemonDetail = () => {
 
   useEffect(() => {
     dispatch(pokemonAction.getPokemon());
+    dispatch(pokemonAction.getPokemon(id));
   }, [dispatch, id]);
 
   if (loading || pokemonList == null) {
@@ -36,7 +37,7 @@ const PokemonDetail = () => {
               </span> }
             <div className={`${pokemon.type[1]}-img`}></div>
           </div>
-            <img className='pokemon-img' src={pokemon.imageArtworkUrl} alt={pokemon.name} />
+            <img className='pokemon-img' src={pokemon.sprites.imageArtworkUrl} alt={pokemon.name} />
             <h2>{pokemon.name}</h2>
             <h3>{pokemon.species}</h3>
             <div className='ability'>  
