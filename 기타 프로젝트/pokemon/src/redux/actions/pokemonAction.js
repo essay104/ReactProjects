@@ -35,7 +35,6 @@ const getPokemon = (id) => {
           }))
 
           const pokemonId = pokemonData.id
-          savePokemonId(pokemonId)
 
           return {
             name: koreanName,

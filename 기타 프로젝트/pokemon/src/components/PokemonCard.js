@@ -16,8 +16,8 @@ const PokemonCard = ({pokemonList, loading}) => {
   else {
     return (
       <div className='pokemonCards'>
-        {pokemonList.map((pokemon, idx) => (
-        <div key={idx} className={`pokemonCard ${typeName(pokemon.type[0])}`}
+        {pokemonList.map((pokemon) => (
+        <div key={pokemon.id} className={`pokemonCard ${typeName(pokemon.type[0])}`}
         onClick={()=>showDetail(pokemon.id)}
         >
           <div className='pokemonType'>

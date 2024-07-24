@@ -3,7 +3,6 @@ import { useParams } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux';
 import "./PokemonDetail.css"
 import { pokemonAction } from '../redux/actions/pokemonAction';
-import { useNavigate } from 'react-router-dom';
 import typeName from '../components/pokemonType';
 import PokemonDetailTop from '../components/PokemonDetailTop';
 
@@ -13,18 +12,26 @@ const PokemonDetail = () => {
   const { data: pokemonList, loading} = useSelector((state) => state.pokemon);
 
   useEffect(() => {
-    dispatch(pokemonAction.getPokemon());
-    dispatch(pokemonAction.getPokemon(id));
-  }, [dispatch, id]);
+    if (!pokemonList || pokemonList.length === 0) {
+      dispatch(pokemonAction.getPokemon());
+    }
+  }, [dispatch, pokemonList]);
 
-  if (loading || pokemonList == null) {
-    return <h1>포켓몬 데이터를 불러오고 있습니다</h1>
+  if (loading) {
+    return <h1>포켓몬 데이터를 불러오고 있습니다</h1>;
   }
-  else {
+
+  const pokemon = pokemonList.find((pokemon) => pokemon.id === parseInt(id));
+
+  if (!pokemon) {
+    return <h1>포켓몬 데이터를 찾을 수 없습니다</h1>;
+  }
+
     
     const prevPokemon = pokemonList.find(pokemon => pokemon.id === parseInt(id) - 1);
-    const pokemon = pokemonList.find(pokemon => pokemon.id === parseInt(id));
     const nextPokemon = pokemonList.find(pokemon => pokemon.id === parseInt(id) + 1);
+
+    console.log(pokemon)
 
     return (
       <div className='detail-container'>
@@ -55,6 +62,5 @@ const PokemonDetail = () => {
       </div>
     )
   }
-}
 
 export default PokemonDetail

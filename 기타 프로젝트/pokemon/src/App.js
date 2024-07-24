@@ -4,13 +4,11 @@ import PokemonAll from './pages/PokemonAll';
 import Maps from './pages/Maps';
 import PokemonDetail from './pages/PokemonDetail';
 import BottomNav from './components/BottomNav';
-import { useState, useEffect } from 'react';
 import { Route, Routes, Link } from 'react-router-dom';
 
 function App() {
 
   return (
-    <body>
       <div className='container'>
         <Header />
         <section>
@@ -21,7 +19,6 @@ function App() {
           </Routes>
         </section>
       </div>
-    </body>
   );
 }
 
