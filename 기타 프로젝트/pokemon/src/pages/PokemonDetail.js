@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react'
+import React, {useEffect, useState} from 'react'
 import { useParams } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux';
 import "./PokemonDetail.css"
@@ -27,6 +27,12 @@ const PokemonDetail = () => {
     return <h1>포켓몬 데이터를 찾을 수 없습니다</h1>;
   }
 
+  const totalState = pokemon.stats.hp 
+  + pokemon.stats.attack 
+  + pokemon.stats.defense 
+  + pokemon.stats.specialAttack 
+  + pokemon.stats.specialDefense 
+  + pokemon.stats.speed;
     
     const prevPokemon = pokemonList.find(pokemon => pokemon.id === parseInt(id) - 1);
     const nextPokemon = pokemonList.find(pokemon => pokemon.id === parseInt(id) + 1);
@@ -36,29 +42,45 @@ const PokemonDetail = () => {
     return (
       <div className='detail-container'>
         <PokemonDetailTop pokemon={pokemon} nextPokemon={nextPokemon} prevPokemon={prevPokemon}/>
-          <div className={`pokemon-card-detail ${typeName(pokemon.type[0])}-detail`}>
-          <div className='pokemonType'>
-              <span className={`typeImg ${typeName(pokemon.type[0])}-img pokemonTypeDetail`}>
-              </span>
-              {pokemon.type[1] && <span className={`typeImg ${typeName(pokemon.type[1])}-img pokemonTypeDetail`}>
-              </span> }
-            <div className={`${pokemon.type[1]}-img`}></div>
-          </div>
-            <img className='pokemon-img' src={pokemon.sprites.imageArtworkUrl} alt={pokemon.name} />
-            <h2>{pokemon.name}</h2>
-            <h3>{pokemon.species}</h3>
-            <div className='ability'>  
-              <h4>특성</h4>
-              <div className='abilities'>
-              {pokemon.ability.map((ability, idx) => (
-                <div> 
-                  <div>{ability.name}</div>
-                  <div>{ability.isHidden ? ability.isHidden : ""}</div>
-                </div>
-            ))}
-              </div>
+        <div className='pokemon-information'>
+          <div className='pokemon-image'>
+            <h3>No.{pokemon.id}</h3>
+            <img className='pokemon-artwork' src={pokemon.sprites.imageArtworkUrl}/>
+            <div className='pokemon-sprites'>
+              <img src={pokemon.sprites.imageUrl}/>
+              <img src={pokemon.sprites.imageUrl2}/>
             </div>
           </div>
+          <div className='pokemon-info'>
+            <div className='pokemon-name'>
+              <h1>{pokemon.name}</h1>
+              <h2>({pokemon.englishName})</h2>
+            </div>
+            <div className='pokemon-type'>
+              <h3>포켓몬 타입</h3>
+              <p>{pokemon.type[0]}</p>
+              <p>{pokemon.type[1]}</p>
+            </div>
+            <div className='pokemon-description'>
+              <p>
+                {pokemon.description}
+              </p>
+            </div>
+            <div className='pokemon-physical'>
+              <span>키 : {pokemon.height} m</span>
+              <span>무게 : {pokemon.weight} kg</span>
+            </div>
+            <div className='pokemon-stats'>
+              <span>종족값 : {totalState}</span>
+              <span>hp : {pokemon.stats.hp}</span>
+              <span>공격력 : {pokemon.stats.attack}</span>
+              <span>방어력 : {pokemon.stats.defense}</span>
+              <span>특수공격 : {pokemon.stats.specialAttack}</span>
+              <span>특수방어 : {pokemon.stats.specialDefense}</span>
+              <span>스피드 : {pokemon.stats.speed}</span>
+            </div>
+          </div>
+        </div>
       </div>
     )
   }
