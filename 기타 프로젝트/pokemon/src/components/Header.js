@@ -9,11 +9,13 @@ const Header = () => {
     return (
         <>
             <div className='header'>
+                <Link to="/">
                 <div className='logo'>
                     <img src={logo}
                         width={180}
                     />
                 </div>
+                </Link>
             </div>
             <div className='nav-menu'>
                 <div className='input-div'>

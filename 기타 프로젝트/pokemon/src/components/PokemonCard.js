@@ -3,7 +3,7 @@ import "./PokemonCard.css"
 import { useNavigate } from 'react-router-dom';
 import typeName from './pokemonType';
 
-const PokemonCard = ({pokemonList, loading}) => {
+const PokemonCard = ({pokemonList, loading, page, pageSize}) => {
   const navigate = useNavigate()
   const showDetail = (id) => {
     navigate(`/pokemon/${id}`)
@@ -14,9 +14,13 @@ const PokemonCard = ({pokemonList, loading}) => {
   }
 
   else {
+
+    const startIndex = (page - 1) * pageSize;
+    const selectedPokemon = pokemonList.slice(startIndex, startIndex + pageSize);
+
     return (
       <div className='pokemonCards'>
-        {pokemonList.map((pokemon) => (
+        {selectedPokemon.map((pokemon) => (
         <div key={pokemon.id} className={`pokemonCard ${typeName(pokemon.type[0])}`}
         onClick={()=>showDetail(pokemon.id)}
         >

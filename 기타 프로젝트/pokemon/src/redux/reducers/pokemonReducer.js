@@ -1,5 +1,7 @@
 const initialState = {
   data: [],
+  page: 1,
+  pageSize: 27,
   loading: false,
 }
 
@@ -19,6 +21,19 @@ const pokemonReducer = (state = initialState, action) => {
       }
       case "GET_POKEMON_FAILURE":
         return {...state, loading: false}
+
+      case 'SET_PAGE':
+          return {
+            ...state,
+            page: action.payload,
+          }
+
+      case 'SET_PAGE_SIZE':
+          return {
+            ...state,
+            pageSize: action.payload,
+          }
+
         default:
           return { ...state }
   }

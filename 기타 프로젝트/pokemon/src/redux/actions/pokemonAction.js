@@ -7,6 +7,7 @@ const getPokemon = (id) => {
       dispatch({
         type: "GET_POKEMON_REQUEST",
       })
+
       const pokemon = await api.get(`/pokemon?limit=386`)
       const pokemonData = pokemon.data.results
 
@@ -82,5 +83,15 @@ const getPokemon = (id) => {
     }
   }
 }
+
+export const setPage = (page) => ({
+  type : 'SET_PAGE',
+  payload: page,
+})
+
+export const setPageSize = (pageSize) => ({
+  type: `SET_PAGE_SIZE`,
+  payload: pageSize,
+})
 
 export const pokemonAction = { getPokemon }
