@@ -3,15 +3,14 @@ import "./PokemonAll.css"
 import PokemonCard from '../components/PokemonCard'
 import { useDispatch, useSelector } from 'react-redux'
 import { pokemonAction } from '../redux/actions/pokemonAction'
-import Pagination from '../components/pageNation';
 
 const PokemonAll = () => {
   const dispatch = useDispatch();
-  const { data: pokemonList, loading, page, pageSize } = useSelector((state) => state.pokemon)
+  const { data: pokemonList, loading } = useSelector((state) => state.pokemon)
 
   useEffect(() => {
     dispatch(pokemonAction.getPokemon());
-  }, [dispatch],);
+  }, [dispatch]);
 
   console.log(pokemonList)
 
@@ -38,8 +37,7 @@ const PokemonAll = () => {
         <div className='type'>페어리</div>
       </div>
       <div className='result-container'>
-        <PokemonCard pokemonList={pokemonList} loading={loading} page={page} pageSize={pageSize} />
-        <Pagination/>
+        <PokemonCard pokemonList={pokemonList} loading={loading} />
       </div>
     </section>
   )

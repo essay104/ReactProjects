@@ -1,4 +1,4 @@
-const typeTranslations = {
+export const typeTranslations = {
   normal: '노말',
   fighting: '격투',
   flying: '비행',
@@ -19,4 +19,14 @@ const typeTranslations = {
   fairy: '페어리'
 };
 
-export default typeTranslations
+export const habitatTranslations = {
+    "cave": "동굴",
+    "forest": "숲",
+    "grassland": "초원",
+    "mountain": "산",
+    "rare": "희귀",
+    "rough-terrain": "험준한 지형",
+    "sea": "바다",
+    "urban": "도시",
+    "waters-edge": "물가"
+  };

@@ -3,8 +3,8 @@ import { useParams } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux';
 import "./PokemonDetail.css"
 import { pokemonAction } from '../redux/actions/pokemonAction';
-import typeName from '../components/pokemonType';
 import PokemonDetailTop from '../components/PokemonDetailTop';
+import EvolutionChain from '../components/evolution';
 
 const PokemonDetail = () => {
   const { id } = useParams()
@@ -78,6 +78,10 @@ const PokemonDetail = () => {
               <span>특수공격 : {pokemon.stats.specialAttack}</span>
               <span>특수방어 : {pokemon.stats.specialDefense}</span>
               <span>스피드 : {pokemon.stats.speed}</span>
+            </div>
+            <div>
+              <span>서식지 : {pokemon.habitat}</span>
+              <EvolutionChain evolution={pokemon.evolution}/>
             </div>
           </div>
         </div>

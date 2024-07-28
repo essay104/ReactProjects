@@ -1,5 +1,22 @@
 import api from "../api";
-import typeTranslations from "../../translation/translation";
+import { typeTranslations } from "../../translation/translation";
+import { habitatTranslations } from "../../translation/translation";
+
+const extractEvolutionChain = (chain) => {
+  const evolutionData = [];
+
+  let currentChain = chain;
+  while (currentChain) {
+    const { species, evolves_to } = currentChain;
+    evolutionData.push({
+      name: species.name,
+      url: species.url,
+    });
+    currentChain = evolves_to[0];
+  }
+
+  return evolutionData;
+};
 
 const getPokemon = (id) => {
   return async (dispatch) => {
@@ -18,6 +35,9 @@ const getPokemon = (id) => {
 
           const speciesResponse = await api.get(pokemonData.species.url)
           const speciesData = speciesResponse.data
+
+          const evolutionResponse = await api.get(speciesData.evolution_chain.url);
+          const evolution = extractEvolutionChain(evolutionResponse.data.chain);
 
           const descriptionEntry = speciesData.flavor_text_entries.find(
             (entry) => entry.language.name === "ko"
@@ -56,6 +76,8 @@ const getPokemon = (id) => {
           const height = pokemonData.height / 10
           const weight = pokemonData.weight / 10
 
+          const habitat = habitatTranslations[speciesData.habitat?.name] 
+
           return {
             name: koreanName,
             englishName: englishName,
@@ -68,6 +90,8 @@ const getPokemon = (id) => {
             stats: stats,
             height: height,
             weight: weight,
+            habitat: habitat,
+            evolution: evolution,
           }
         })
       )
@@ -78,20 +102,11 @@ const getPokemon = (id) => {
           pokemonDetails,
       })
     }
+
     catch (error) {
       dispatch({type:"GET_POKEMON_FAILURE"})
     }
   }
 }
-
-export const setPage = (page) => ({
-  type : 'SET_PAGE',
-  payload: page,
-})
-
-export const setPageSize = (pageSize) => ({
-  type: `SET_PAGE_SIZE`,
-  payload: pageSize,
-})
 
 export const pokemonAction = { getPokemon }
