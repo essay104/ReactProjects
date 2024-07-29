@@ -101,12 +101,6 @@
   position: relative;
 }
 
-.pokemon-image h3 {
-  position: absolute;
-  top: 5px;
-  left: 5px;
-}
-
 .pokemon-artwork {
   width: 250px;
 }

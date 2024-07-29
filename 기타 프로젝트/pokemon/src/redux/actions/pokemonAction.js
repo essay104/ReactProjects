@@ -36,8 +36,8 @@ const getPokemon = (id) => {
           const speciesResponse = await api.get(pokemonData.species.url)
           const speciesData = speciesResponse.data
 
-          const evolutionResponse = await api.get(speciesData.evolution_chain.url);
-          const evolution = extractEvolutionChain(evolutionResponse.data.chain);
+          const evolutionResponse = await api.get(speciesData.evolution_chain.url)
+          const evolution = extractEvolutionChain(evolutionResponse.data.chain)
 
           const descriptionEntry = speciesData.flavor_text_entries.find(
             (entry) => entry.language.name === "ko"
@@ -78,6 +78,9 @@ const getPokemon = (id) => {
 
           const habitat = habitatTranslations[speciesData.habitat?.name] 
 
+          const isLegendary = speciesData.is_legendary
+          const isMythtical = speciesData.is_mythical
+
           return {
             name: koreanName,
             englishName: englishName,
@@ -92,6 +95,8 @@ const getPokemon = (id) => {
             weight: weight,
             habitat: habitat,
             evolution: evolution,
+            isLegendary: isLegendary,
+            isMythtical: isMythtical,
           }
         })
       )

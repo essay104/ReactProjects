@@ -43,13 +43,19 @@ const PokemonDetail = () => {
       <div className='detail-container'>
         <PokemonDetailTop pokemon={pokemon} nextPokemon={nextPokemon} prevPokemon={prevPokemon}/>
         <div className='pokemon-information'>
+          <div className='pokemon-leftInfo'>
+          <div className='pokemon-leftInfo-top'>
+          <h3>No.{pokemon.id}</h3>
+          {pokemon.isLegendary ? (<div>전설</div>) : (<div></div>)}
+          {pokemon.isMythtical ? (<div>환상</div>) : (<div></div>)}
+          </div>
           <div className='pokemon-image'>
-            <h3>No.{pokemon.id}</h3>
             <img className='pokemon-artwork' src={pokemon.sprites.imageArtworkUrl}/>
             <div className='pokemon-sprites'>
               <img src={pokemon.sprites.imageUrl}/>
               <img src={pokemon.sprites.imageUrl2}/>
             </div>
+          </div>
           </div>
           <div className='pokemon-info'>
             <div className='pokemon-name'>
@@ -62,6 +68,7 @@ const PokemonDetail = () => {
               <p>{pokemon.type[1]}</p>
             </div>
             <div className='pokemon-description'>
+              <h5>{pokemon.species}</h5>
               <p>
                 {pokemon.description}
               </p>

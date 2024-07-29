@@ -1,12 +1,13 @@
 .pokemonCards {
-    display: grid;
+  display: grid;
     justify-content: center;
     align-items: center;
-    grid-template-columns: repeat(12, 1fr);
-    gap: 5px;
+    grid-template-columns: repeat(9, 1fr);
+    gap: 10px;
 }
 
 .pokemonCard {
+    width: 160px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -15,12 +16,6 @@
     padding: 20px;
     cursor: pointer;
     transition: all 0.3s;
-}
-
-.pokemonCards {
-    display: grid;
-    grid-template-columns: repeat(9, 1fr);
-    gap: 10px;
 }
 
 .pokemonCard:hover {
