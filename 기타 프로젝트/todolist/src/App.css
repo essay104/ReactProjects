@@ -1,0 +1,57 @@
+@font-face {
+  font-family: 'MaplestoryOTFBold';
+  src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.1/MaplestoryOTFBold.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+* {
+  padding: 0 20px;
+}
+
+.app {
+  border: 1px solid #000;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.todoList {
+  padding: 20px;
+}
+
+.todo-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.menu_wrapper {
+  display: flex;
+  justify-content: space-between;
+  margin: 20px 0 30px;
+}
+
+.left_col select {
+  border: none;
+  border-radius: 5px;
+  background: #ececec;
+  margin-right: 10px;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+.right_col {
+  flex-grow: 1;
+}
+
+.right_col button {
+  width: 20%;
+}
