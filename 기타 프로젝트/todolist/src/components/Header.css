@@ -1,19 +1,25 @@
 .header {
   height: 50px;
-  border-bottom: 1px solid #ddd;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px 200px;
+  padding: 20px 60px;
+  background-color: #ddd;
+}
+
+.header-center {
+  font-size: 1.5rem;
 }
 
 .nav-menu {
   display: flex;
   justify-content: start;
   align-items: center;
-  padding: 10px 200px;
+  padding: 10px 80px;
   gap: 20px;
   border-bottom: 1px solid #ddd;
+  background-color: #3b3b3b;
+  color: #eee;
 }
 
 .nav-menu a {
