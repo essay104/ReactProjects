@@ -3,7 +3,7 @@ import Header from '../components/Header'
 import Button from '../components/Button'
 import { useState } from 'react'
 
-const DiaryManager = () => {
+const NewsManager = () => {
 
   return (
     <div>
@@ -16,4 +16,4 @@ const DiaryManager = () => {
   )
 }
 
-export default DiaryManager
+export default NewsManager

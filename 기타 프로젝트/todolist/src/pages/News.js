@@ -3,6 +3,7 @@ import { useParams, useNavigate } from 'react-router-dom'
 import Header from '../components/Header'
 import Button from '../components/Button'
 import Content from '../components/Content'
+import { getFormattedDate } from '../util'
 
 
 const News = () => {
@@ -17,6 +18,7 @@ const News = () => {
   const goEdit = () => {
     navigate(`/edit/${id}`);
   };
+
 
   return (
     <div>

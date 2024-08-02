@@ -1,9 +1,9 @@
 .diary-item {
   display: flex;
-  align-items: center;
-  padding: 15px 50px;
+  align-items: flex-start;
+  padding: 25px;
   border-bottom: 1px solid #e2e2e2;
-  gap: 5px;
+  gap: 15px;
 }
 
 .img_section {
@@ -47,8 +47,10 @@
 
 .title-section {
   display: flex;
+  justify-content: space-between;
   align-items: center;
-  gap: 14px;
+  gap: 5px;
+  padding-right: 15px;
 }
 
 .content-section {

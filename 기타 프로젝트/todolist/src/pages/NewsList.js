@@ -2,19 +2,24 @@ import React from 'react'
 import { useState, useEffect } from 'react'
 import Button from '../components/Button'
 import { useNavigate } from 'react-router-dom'
-import DiaryItem from '../components/DiaryItem'
+import NewsItem from '../components/NewsItem'
 
 const sortOptionList = [
   { value: "latest", name: "최신순" },
   { value: "oldest", name: "오래된순" },
 ]
 
-const DiaryList = ({ data }) => {
+const NewsList = ({ data }) => {
   const [sortedData, setSoltedData] = useState([])
   const navigate = useNavigate()
   const onClickNew = () => {
     navigate("/new")
   }
+
+  useEffect(()=>{
+    const copyList = JSON.parse(JSON.stringify(data))
+    setSoltedData(copyList)
+  }, [])
 
   return (
     <div className='diaryList'>
@@ -32,8 +37,8 @@ const DiaryList = ({ data }) => {
       </div>
       <div className='diary-wrapper'>
         <div className='list_wrapper'>
-        {data.map((todo) => (
-            <DiaryItem key={todo.id} todo={todo} />
+        {data.map((data) => (
+            <NewsItem key={data.id} data={data} />
           ))}
         </div>
       </div>
@@ -41,4 +46,4 @@ const DiaryList = ({ data }) => {
   )
 }
 
-export default DiaryList
+export default NewsList
