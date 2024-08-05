@@ -1,0 +1,46 @@
+.diary-item {
+  display: flex;
+  justify-content: start;
+  height: 500px;
+  flex-direction: column;
+  padding: 25px;
+  gap: 20px;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.8);
+  border-radius: 5px;
+}
+
+.diary-img {
+  height: 280px;
+  cursor: pointer;
+  position: relative;
+  transition: all 0.3s;
+}
+
+.diary-img img {
+  width: 100%;
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.diary-title {
+  padding-bottom: 10px;
+  border-bottom: 1px solid #000;
+}
+
+.diary-date {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  font-size: 1.2rem;
+}

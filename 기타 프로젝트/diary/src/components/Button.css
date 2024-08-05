@@ -1,0 +1,31 @@
+.Button {
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-size: 18px;
+  font-family: "MaplestoryOTFBold";
+  transition: all 0.3s;
+}
+
+.Button_default {
+  background: #ececec;
+}
+
+.Button_positive {
+  background: linear-gradient(
+    45deg,
+    #833ab4,
+    #c13584,
+    #e1306c,
+    #f56040,
+    #fcaf45,
+    #ffdc80
+  );
+  color: #fff;
+}
+
+.Button_negative {
+  background: #1f1f1f;
+  color: #fff;
+}

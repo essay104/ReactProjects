@@ -1,0 +1,43 @@
+/* diaryList */
+
+.diaryList {
+  padding: 20px;
+}
+
+.diary-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.menu_wrapper {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 15px;
+  gap: 10px;
+}
+
+.left_col select {
+  border: none;
+  border-radius: 5px;
+  background: #ececec;
+  padding: 12px 20px;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+.right_col {
+  width: 150px;
+}
+
+.right_col button {
+  width: 100%;
+}
+
+.list_wrapper {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  padding: 25px 100px;
+  gap: 5px;
+}
+
