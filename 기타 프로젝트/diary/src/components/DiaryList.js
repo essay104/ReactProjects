@@ -10,6 +10,11 @@ const sortOptionList = [
 ];
 
 const DiaryList = ({ data }) => {
+  const navigate = useNavigate();
+  const onClickNew = () => {
+    navigate("/new");
+  };
+
   return (
     <div className="diaryList">
       <div className="menu_wrapper">
@@ -23,7 +28,7 @@ const DiaryList = ({ data }) => {
           </select>
         </div>
         <div className="right_col">
-          <Button text="새글작성" type="positive" />
+          <Button text="새글작성" type="positive" onClick={onClickNew} />
         </div>
       </div>
       <div className="diary-wrapper">

@@ -40,9 +40,8 @@ const Home = () => {
     },
   ];
 
-  console.log(sampleData);
-
   const data = useContext(DiaryStateContext);
+  const [item, setItem] = useState(sampleData);
   const [pivotDate, setPivotDate] = useState(new Date());
   const [filteredData, setFilteredData] = useState([]);
 
@@ -58,6 +57,10 @@ const Home = () => {
     pivotDate.getMonth() + 1
   } 월`;
 
+  const combinedItem = [...sampleData, ...data];
+
+  console.log(combinedItem);
+
   return (
     <div>
       <Header
@@ -65,7 +68,7 @@ const Home = () => {
         leftChild={<Button text="Prev" onClick={onDecreaseMonth} />}
         rightChild={<Button text="Next" onClick={onIncreaseMonth} />}
       />
-      <DiaryList data={sampleData} />
+      <DiaryList data={combinedItem} />
     </div>
   );
 };
