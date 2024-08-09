@@ -68,7 +68,7 @@ function App() {
     dispatch({
       type: "CREATE",
       data: {
-        id: data.length,
+        id: idRef.current++,
         title,
         img,
         text,

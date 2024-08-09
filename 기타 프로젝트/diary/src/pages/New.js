@@ -18,7 +18,9 @@ const New = () => {
     const { title, img, text, date } = data;
     onCreate(title, img, text, date);
     navigate("/");
+    console.log(data);
   };
+
 
   return (
     <div>

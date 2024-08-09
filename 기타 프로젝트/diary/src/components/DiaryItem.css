@@ -1,4 +1,4 @@
-.diary-item {
+/* .diary-item {
   display: flex;
   justify-content: start;
   height: 500px;
@@ -7,13 +7,16 @@
   gap: 20px;
   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.8);
   border-radius: 5px;
-}
+} */
 
 .diary-img {
   height: 280px;
   cursor: pointer;
   position: relative;
   transition: all 0.3s;
+  border-radius: 5px;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
 }
 
 .diary-img img {

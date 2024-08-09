@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import Button from "./Button";
 import { useNavigate } from "react-router-dom";
 import DiaryItem from "../components/DiaryItem";
+import Init from "./Init";
 
 const sortOptionList = [
   { value: "latest", name: "최신순" },
@@ -32,11 +33,15 @@ const DiaryList = ({ data }) => {
         </div>
       </div>
       <div className="diary-wrapper">
-        <div className="list_wrapper">
-          {data.map((data) => (
-            <DiaryItem key={data.id} data={data} />
-          ))}
-        </div>
+        {data.length > 0 ? (
+          <div className="list_wrapper">
+            {data.map((data) => (
+              <DiaryItem key={data.id} data={data} />
+            ))}
+          </div>
+        ) : (
+          <Init />
+        )}
       </div>
     </div>
   );

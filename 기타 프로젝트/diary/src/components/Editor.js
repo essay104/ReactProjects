@@ -7,31 +7,15 @@ import { getFormattedDate } from "../util";
 
 const Editor = ({ initData, onSubmit }) => {
   const navigate = useNavigate();
-
-  const initDate = (date) => {
-    const year = date.getFullYear();
-    const month = String(date.getMonth() + 1);
-    const day = String(date.getDate());
-    return `${year}-${month}-${day}`;
-  };
-
-  const [state, setState] = useState({
-    date: initDate(new Date()),
-    img: "",
-    title: "",
-    text: "",
-  });
-
+  const [state, setState] = useState({});
   useEffect(() => {
     if (initData) {
       setState({
-        ...initDate,
-        date: getFormattedDate(new Date(initDate.date)),
+        ...initData,
+        date: getFormattedDate(new Date(initData.date)),
       });
     }
   }, [initData]);
-
-  const { date, img, title, text } = state;
 
   const handleChangeDate = (e) => {
     setState({
@@ -39,6 +23,8 @@ const Editor = ({ initData, onSubmit }) => {
       date: e.target.value,
     });
   };
+
+  const { id, date, img, title, text } = state;
 
   const handleTitleUpload = (e) => {
     setState({

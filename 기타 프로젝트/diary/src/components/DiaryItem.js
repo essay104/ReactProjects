@@ -2,6 +2,7 @@ import React from "react";
 import "./DiaryItem.css";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
+import { getFormattedDate } from "../util";
 
 const DiaryItem = ({ data }) => {
   const navigate = useNavigate();
@@ -27,6 +28,8 @@ const DiaryItem = ({ data }) => {
     return <div>Loading</div>;
   }
 
+  const formattedDate = getFormattedDate(new Date(data.date));
+
   return (
     <div
       onClick={goDetail}
@@ -34,12 +37,8 @@ const DiaryItem = ({ data }) => {
       onMouseOver={handleMouseOver}
       onMouseOut={handleMouseOut}
     >
-      <img src={data.imgUrl} alt={data.id} />
-      {showDate && (
-        <div className="diary-date">
-          {data.date}
-        </div>
-      )}
+      <img src={data.img} alt={data.id} />
+      {showDate && <div className="diary-date">{formattedDate}</div>}
     </div>
   );
 };
