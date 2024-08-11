@@ -11,10 +11,16 @@ const sortOptionList = [
 ];
 
 const DiaryList = ({ data }) => {
+  const [sortedData, setSortedData] = useState([]);
   const navigate = useNavigate();
   const onClickNew = () => {
     navigate("/new");
   };
+
+  useEffect(() => {
+    const copyList = JSON.parse(JSON.stringify(data));
+    setSortedData(copyList);
+  }, []);
 
   return (
     <div className="diaryList">
@@ -35,8 +41,8 @@ const DiaryList = ({ data }) => {
       <div className="diary-wrapper">
         {data.length > 0 ? (
           <div className="list_wrapper">
-            {data.map((data) => (
-              <DiaryItem key={data.id} data={data} />
+            {sortedData.map((it) => (
+              <DiaryItem key={it.id} {...it} />
             ))}
           </div>
         ) : (

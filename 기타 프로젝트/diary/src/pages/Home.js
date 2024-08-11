@@ -21,6 +21,8 @@ const Home = () => {
     pivotDate.getMonth() + 1
   } 월`;
 
+  console.log(data)
+
   return (
     <div>
       <Header

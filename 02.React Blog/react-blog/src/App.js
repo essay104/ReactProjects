@@ -1,45 +1,48 @@
-import './App.css';
-import React, { useReducer, useRef, useEffect, useState } from 'react';
-import { Route, Routes } from 'react-router-dom';
-import Home from './pages/Home';
-import New from './pages/New';
-import Diary from './pages/Diary';
-import Edit from './pages/Edit';
+import "./App.css";
+import React, { useReducer, useRef, useEffect, useState } from "react";
+import { Route, Routes } from "react-router-dom";
+import Home from "./pages/Home";
+import New from "./pages/New";
+import Diary from "./pages/Diary";
+import Edit from "./pages/Edit";
 
 const reducer = (state, action) => {
   switch (action.type) {
     case "INIT": {
-      return action.data
+      return action.data;
     }
     case "CREATE": {
-      const newState = [action.data, ...state]
-      localStorage.setItem("diary", JSON.stringify(newState))
-      return newState
+      const newState = [action.data, ...state];
+      localStorage.setItem("diary", JSON.stringify(newState));
+      return newState;
     }
     case "UPDATE": {
-      const newState = state.map((it) => String(it.id) === String(action.data.id)
-        ? { ...action.data } : it)
-      localStorage.setItem("diary", JSON.stringify(newState))
-      return newState
+      const newState = state.map((it) =>
+        String(it.id) === String(action.data.id) ? { ...action.data } : it
+      );
+      localStorage.setItem("diary", JSON.stringify(newState));
+      return newState;
     }
     case "DELETE": {
-      const newState = state.filter((it) => String(it.id) !== String(action.targetId))
-      localStorage.setItem("diary", JSON.stringify(newState))
-      return newState
+      const newState = state.filter(
+        (it) => String(it.id) !== String(action.targetId)
+      );
+      localStorage.setItem("diary", JSON.stringify(newState));
+      return newState;
     }
     default: {
-      return state
+      return state;
     }
   }
-}
+};
 
 export const DiaryStateContext = React.createContext();
 export const DiaryDispatchContext = React.createContext();
 
 function App() {
-  const [data, dispatch] = useReducer(reducer, [])
-  const [isDataLoaded, setIsDataLoaded] = useState(false)
-  const idRef = useRef(0)
+  const [data, dispatch] = useReducer(reducer, []);
+  const [isDataLoaded, setIsDataLoaded] = useState(false);
+  const idRef = useRef(0);
 
   useEffect(() => {
     const rawData = localStorage.getItem("diary");
@@ -81,19 +84,19 @@ function App() {
         date: new Date(date).getTime(),
         emotionId,
         content,
-      }
-    })
-  }
+      },
+    });
+  };
 
   const onDelete = (targetId) => {
     dispatch({
       type: "DELETE",
       targetId,
-    })
-  }
+    });
+  };
 
   if (!isDataLoaded) {
-    return <div>데이터를 불러오는 중입니다.</div>
+    return <div>데이터를 불러오는 중입니다.</div>;
   } else {
     return (
       <DiaryStateContext.Provider value={data}>

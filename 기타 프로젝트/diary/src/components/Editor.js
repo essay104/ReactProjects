@@ -24,8 +24,6 @@ const Editor = ({ initData, onSubmit }) => {
     });
   };
 
-  const { id, date, img, title, text } = state;
-
   const handleTitleUpload = (e) => {
     setState({
       ...state,
@@ -48,7 +46,7 @@ const Editor = ({ initData, onSubmit }) => {
   };
 
   const handleSubmit = () => {
-    text.trim() === "" ? alert("내용을 입력해주세요!") : onSubmit(state);
+    state.text.trim() === "" ? alert("내용을 입력해주세요!") : onSubmit(state);
   };
 
   const handleOnGoBack = () => {
@@ -87,7 +85,7 @@ const Editor = ({ initData, onSubmit }) => {
         <div className="input_wrapper">
           <textarea
             placeholder="내용을 입력해주세요"
-            value={state.content}
+            value={state.text}
             onChange={handleChangeContent}
           />
         </div>

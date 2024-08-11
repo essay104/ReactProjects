@@ -7,16 +7,18 @@ import { getFormattedDate } from "../util";
 import useDiary from "../hook/useDiary";
 
 const Diary = () => {
-  const { id } = useParams;
+  const { id } = useParams();
   const data = useDiary(id);
 
-  const navigate = useNavigate;
+  const navigate = useNavigate();
   const goBack = () => {
     navigate(-1);
   };
   const goEdit = () => {
     navigate(`/edit/${id}`);
   };
+
+  console.log(data)
 
   if (!data) {
     return <div>데이터를 불러오고 있습니다...</div>;

@@ -68,13 +68,16 @@ function App() {
     dispatch({
       type: "CREATE",
       data: {
-        id: idRef.current++,
+        id: idRef.current,
         title,
         img,
         text,
         date: new Date(date).getTime(),
       },
     });
+    console.log("생성된 데이터 ID:", idRef.current);
+    idRef.current += 1;
+    console.log("생성 후 ID:", idRef.current);
   };
 
   const onUpdate = (targetId, title, img, text, date) => {
