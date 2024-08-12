@@ -2,7 +2,9 @@ import React from "react";
 import "./Button.css";
 
 const Button = ({ text, type, onClick }) => {
-  const btnType = ["positive", "negative"].includes(type) ? type : "default";
+  const btnType = ["positive", "negative", "normal"].includes(type)
+    ? type
+    : "default";
 
   return (
     <button

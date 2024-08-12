@@ -41,3 +41,10 @@
   gap: 5px;
 }
 
+/* diary */
+
+.buttons {
+  display: flex;
+  gap: 5px;
+  justify-content: end;
+}

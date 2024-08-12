@@ -1,9 +1,24 @@
-import React from 'react'
+import React from "react";
+import "./Viewer.css";
 
-const Viewer = () => {
+const Viewer = ({ img, title, text }) => {
+  console.log(img, title, text);
   return (
-    <div>Viewer</div>
-  )
-}
+    <div className="Viewer">
+      <section>
+        <div className="viewer-top">
+          <div className="img_wrapper">
+            <img src={img} alt="img" />
+          </div>
+          <h4>{title}</h4>
+        </div>
+        <div className="viewer-bottom">
+          <p>{text}</p>
+        </div>
+      </section>
+      <section></section>
+    </div>
+  );
+};
 
-export default Viewer
+export default Viewer;

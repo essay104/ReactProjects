@@ -29,3 +29,12 @@
   background: #1f1f1f;
   color: #fff;
 }
+
+.Button_normal {
+  background: #fff;
+  color: #000;
+}
+
+.Button_normal:hover {
+  background: #ddd;
+}
