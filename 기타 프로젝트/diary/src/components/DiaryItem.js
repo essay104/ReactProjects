@@ -20,10 +20,10 @@ const DiaryItem = ({ id, title, img, text, date }) => {
       <div>
         <div className="diary-img" onClick={() => setIsModalOpen(true)}>
           <img src={img} alt={id} />
-        </div>
-        <div className="diary-title">
-          <span>{title}</span>
-          <span className="diary-date">{formattedDate}</span>
+          <div className="diary-title">
+            <span>{title}</span>
+            <span className="diary-date">{formattedDate}</span>
+          </div>
         </div>
       </div>
       <Modal isOpen={isModalOpen} onClose={closeModal}>

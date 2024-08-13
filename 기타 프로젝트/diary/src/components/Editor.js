@@ -78,7 +78,7 @@ const Editor = ({ initData, onSubmit }) => {
           value={state.img}
           onChange={handleImgUpload}
         />
-        <div className="input_wrapper"></div>
+        <div>API IMAGES</div>
       </div>
       <div className="editor_section">
         <h3>본문을 입력하세요</h3>

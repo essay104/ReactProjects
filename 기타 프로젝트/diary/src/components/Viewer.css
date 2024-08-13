@@ -1,7 +1,6 @@
 .Viewer section {
   width: 100%;
-  gap: 25px;
-  margin: 20px 0 60px;
+  gap: 30px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -14,7 +13,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 20px;
+  gap: 30px;
 }
 
 .Viewer h4 {
@@ -47,7 +46,6 @@
   border-radius: 5px;
   padding: 25px;
   text-align: start;
-  border: 1px solid #000;
 }
 .Viewer .content_wrapper p {
   font-size: 20px;

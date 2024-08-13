@@ -16,7 +16,6 @@ const Viewer = ({ img, title, text }) => {
           <p>{text}</p>
         </div>
       </section>
-      <section></section>
     </div>
   );
 };
